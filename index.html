@@ -1,45 +1,291 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
-    <style>
-        body {
-          background-color: #faf7f1;
-          background-image:
-            linear-gradient(
-              rgba(250, 247, 241, 0.35),
-             rgba(250, 247, 241, 0.35)
-            ),
-            url("images/penguin.jpg");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Little World</title>
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-          background-size: cover;
-          background-position: center top;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
+:root {
+  --cream: #faf7f1;
+  --pink: #efd6d2;
+  --green: #dce5d6;
+  --blue: #dce6ed;
+  --brown: #685b52;
+  --muted: #a99b90;
+}
 
-          color: var(--brown);
-          font-family: "Georgia", "Noto Serif SC", serif;
-         }
+body {
+  background-color: #faf7f1;
+  background-image:
+    linear-gradient(
+      rgba(250, 247, 241, 0.25),
+      rgba(250, 247, 241, 0.25)
+    ),
+    url("images/home-bg.jpg");
 
-       @media (max-width: 650px) {
-         body {
-           background-attachment: scroll;
-         }
-       }
-        h1 {
-            font-size: 36px;
-        }
-        p {
-            color: #888;
-            line-height: 2;
-        }
-    </style>
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--brown);
+  font-family: "Georgia", "Noto Serif SC", serif;
+}
+
+@media (max-width: 650px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 28px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #c78e91;
+}
+
+.hero {
+  max-width: 1040px;
+  margin: 65px auto 100px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #bd9995;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.25;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 14px;
+}
+
+.hero-image {
+  min-height: 360px;
+  border-radius: 48% 48% 20px 20px;
+  background:
+    radial-gradient(circle at 50% 35%, #f9e7dc 0 17%, transparent 18%),
+    linear-gradient(145deg, #e7d7d1, #dce5d6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 27px;
+  border: 1px solid #c9aaa2;
+  border-radius: 30px;
+  font-size: 13px;
+  transition: .2s;
+}
+
+.button:hover {
+  background: var(--pink);
+}
+
+.section {
+  max-width: 1040px;
+  margin: auto;
+  padding: 30px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(5px);
+  padding: 12px;
+  border-radius: 14px;
+  transition: transform .2s;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.work-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+}
+
+.work-card h3 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 17px 5px 7px;
+}
+
+.work-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 5px 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 75px 20px 35px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2.5;
+}
+
+@media (max-width: 650px) {
+  nav {
+    padding: 22px;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin: 30px auto 65px;
+  }
+
+  .hero-image {
+    min-height: 260px;
+  }
+
+  .works {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>Hello, World!</h1>
-    <p>欢迎来到我的个人网站。</p>
-    <p>这里记录我的作品、设计和生活。</p>
+
+<nav>
+  <div class="logo">My little world ♡</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#works">Works</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-tag">WELCOME TO MY WORLD</div>
+    <h1>Hello,<br>I'm a creator.</h1>
+    <p>
+      A little place to collect my ideas,<br>
+      illustrations, designs and creations.
+    </p>
+    <a href="#works" class="button">Explore my works →</a>
+  </div>
+
+  <div class="hero-image">✿</div>
+</section>
+
+<section class="section" id="works">
+  <div class="section-heading">
+    <h2>Selected Works</h2>
+    <p>A collection of things I have created ♡</p>
+  </div>
+
+  <div class="works">
+    <a href="illustration.html" class="work-card">
+      <div class="work-image" style="background:#f1dedb">🌷</div>
+      <h3>Illustration</h3>
+      <p>Drawings & Characters</p>
+    </a>
+
+    <a href="design.html" class="work-card">
+      <div class="work-image" style="background:#e3e9df">☁</div>
+      <h3>Graphic Design</h3>
+      <p>Posters & Pixel Art</p>
+    </a>
+
+    <a href="projects.html" class="work-card">
+      <div class="work-image" style="background:#e1e9ef">✧</div>
+      <h3>Game Projects</h3>
+      <p>Games & Experiments</p>
+    </a>
+  </div>
+</section>
+
+<footer>
+  Made with love ♡<br>
+  © 2026 My Little World
+</footer>
+
 </body>
 </html>
