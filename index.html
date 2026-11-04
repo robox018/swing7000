@@ -6,12 +6,28 @@
     <title>我的个人网站</title>
     <style>
         body {
-            background: #f5f5f5;
-            color: #333;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 100px 20px;
-        }
+          background-color: #faf7f1;
+          background-image:
+            linear-gradient(
+              rgba(250, 247, 241, 0.35),
+             rgba(250, 247, 241, 0.35)
+            ),
+            url("images/penguin.jpg");
+
+          background-size: cover;
+          background-position: center top;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+
+          color: var(--brown);
+          font-family: "Georgia", "Noto Serif SC", serif;
+         }
+
+       @media (max-width: 650px) {
+         body {
+           background-attachment: scroll;
+         }
+       }
         h1 {
             font-size: 36px;
         }
